@@ -1,0 +1,250 @@
+
+
+Question 1 : The Crown of the Greatest
+
+Once upon a time in the Kingdom of Logic, four mighty warriors—Arith, Geome, Algeb, and Stat—gathered to compete for the title of “The Greatest.” Each warrior had a magical number that represented their strength.
+
+The king of Logic summoned the royal programmer to decide which warrior was the greatest. However, the decision-making process must follow the sacred rule of nested if-else statements, as decreed by the ancient scroll of Competitive Programming.
+
+Your task is to write a program that takes the strengths of the four warriors (four integers) as input and determines who among them is the greatest.
+
+Input Format
+	•	Four integers ￼A, ￼B, ￼C and ￼D representing the strengths of Arith, Geome, Algeb, and Stat, respectively.
+
+Output Format
+	•	Print the greatest number among the four.
+
+Constraints
+	•	￼ 1 \leq A, B, C, D \leq 10^5 
+
+Example Input 1
+
+45 78 12 34
+
+Example Output 1
+
+78
+
+Example Input 2
+
+23 23 45 22
+
+Example Output 2
+
+45
+
+Note
+
+Use nested if-else statements to find the greatest number. No other methods or library functions are allowed.
+
+
+
+***************************************************************************************************************************
+  
+Question 2 : The Festival of Leap
+
+In the mystical land of Calendaria, every year is carefully recorded by the Timekeeper, a wise old sage. One special tradition in Calendaria is the Festival of Leap, celebrated only in leap years.
+
+The Timekeeper is overwhelmed with the growing number of years to check and has summoned you, the programmer, to help decide whether a given year is a leap year or not. Your solution will ensure the festival is celebrated on the correct years.
+
+A year is considered a leap year if:
+	1.	It is divisible by 4, but not divisible by 100.
+OR
+	2.	It is divisible by 400.
+
+Your task is to create a program to determine if a given year is a leap year, so the Timekeeper can decide whether the festival should be celebrated.
+
+Input Format
+	•	A single integer ￼, the year under consideration.
+
+Output Format
+	•	Print YES if the year is a leap year. Otherwise, print NO.
+
+Constraints
+	•	￼ 1 \leq Y \leq 10^6 
+
+Example Input 1
+
+2000
+
+Example Output 1
+
+YES
+
+Example Input 2
+
+1900
+
+Example Output 2
+
+NO
+
+Example Input 3
+
+2024
+
+Example Output 3
+
+YES
+
+Note
+	•	The festival of Leap will only be celebrated if the year meets the given leap year conditions.
+	•	Can you ensure the people of Calendaria never miss a festival again?  
+
+*******************************************************************************************************************************************
+  
+Question 3:  The Grading Oracle
+
+In the enchanted land of Learnoria, students of the Grand Academy of Wisdom have their knowledge tested through rigorous exams. Each student approaches the Grading Oracle, a magical entity, to receive their grade based on their performance.
+
+The Oracle follows strict grading criteria to assign grades, as outlined below:
+	•	If the marks are between 90 and 100 (inclusive), the grade is “A”.
+	•	If the marks are between 80 and 89, the grade is “B”.
+	•	If the marks are between 70 and 79, the grade is “C”.
+	•	If the marks are between 60 and 69, the grade is “D”.
+	•	If the marks are below 60, the grade is “F”.
+
+The Oracle is old and tired of doing the grading manually and has summoned you to write a program to help.
+
+Input Format
+	•	A single integer ￼ (marks obtained by the student).
+
+Output Format
+	•	Print the grade corresponding to the marks.
+
+Constraints
+	•	￼ 0 \leq M \leq 100 
+	•	Marks will always be an integer.
+
+Example Input 1
+
+92
+
+Example Output 1
+
+A
+
+Example Input 2
+
+85
+
+Example Output 2
+
+B
+
+Example Input 3
+
+58
+
+Example Output 3
+
+F
+
+Note
+
+Help the Oracle by writing a program that strictly adheres to the grading rules. The students of Learnoria are counting on you! Will you rise to the challenge? 
+  
+
+
+****************************************************************************************************************************
+
+Question 4 :  The Triangle of Truth
+
+In the land of Geometrica, there exists a legendary artifact called the Triangle of Truth. To unlock its secrets, three mystical rods of varying lengths are needed to form a valid triangle. The artifact will only activate if the rods satisfy the ancient triangle conditions, which state:
+	1.	The sum of any two sides must be greater than the third side.
+	2.	Specifically:
+	•	￼a + b > c
+	•	￼b + c> a
+	•	￼c + a > b
+
+As the chosen programmer, you must determine whether the given lengths of the rods can form a valid triangle.
+
+Input Format
+	•	Three space-separated integers ￼a, ￼b, ￼c, representing the lengths of the rods.
+
+Output Format
+	•	Print “Valid” if the rods can form a valid triangle.
+	•	Otherwise, print “Invalid”.
+
+Constraints
+	•	￼ 1 \leq a, b, c \leq 10^5 
+
+Example Input 1
+
+3 4 5
+
+Example Output 1
+
+Valid
+
+Example Input 2
+
+1 2 3
+
+Example Output 2
+
+Invalid
+
+Example Input 3
+
+7 10 5
+
+Example Output 3
+
+Valid
+
+Note
+
+To unlock the Triangle of Truth, ensure that all three conditions are satisfied. If even one condition fails, the triangle cannot be formed. Will you prove your mastery over the laws of geometry and unlock the artifact?  
+
+
+**********************************************************************************************************************************
+  
+Question 5:  The Vault of Secrets
+
+In the hidden realms of Cryptonia lies the legendary Vault of Secrets, guarded by a magical lock that only opens with a valid password. The password must meet specific criteria to ensure the vault’s security.
+
+The Guardian of the Vault has summoned you, a skilled programmer, to create a program to verify the validity of a password ￼ based on the following rules:
+	1.	The password must be at least 8 characters long.
+	2.	The password must contain at least one uppercase letter.
+	3.	The password must contain at least one digit.
+
+Input Format
+	•	A single string ￼ representing the password.
+
+Output Format
+	•	Print “Valid” if the password meets all the criteria.
+	•	Otherwise, print “Invalid”.
+
+Constraints
+	•	￼ 1 \leq \text{length of } P \leq 100 
+	•	The password consists of alphanumeric characters and symbols.
+
+Example Input 1
+
+Secure123
+
+Example Output 1
+
+Valid
+
+Example Input 2
+
+weakpass
+
+Example Output 2
+
+Invalid
+
+Example Input 3
+
+Short1
+
+Example Output 3
+
+Invalid
+
+Note
+
+The vault will only open for passwords that strictly meet all the criteria. Your program must analyze the password carefully, checking each condition. 
+  Can you ensure the security of Cryptonia’s most precious secrets? The fate of the realm rests in your hands!
