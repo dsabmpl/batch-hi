@@ -15,7 +15,7 @@ Output Format
 	•	Print the greatest number among the four.
 
 Constraints
-	•	￼ 1 \leq A, B, C, D \leq 10^5 
+	•	￼ 1 <= A, B, C, D <= 10^5 
 
 Example Input 1
 
@@ -61,7 +61,7 @@ Output Format
 	•	Print YES if the year is a leap year. Otherwise, print NO.
 
 Constraints
-	•	￼ 1 \leq Y \leq 10^6 
+	•	￼ 1 <= Y <= 10^6 
 
 Example Input 1
 
@@ -113,7 +113,7 @@ Output Format
 	•	Print the grade corresponding to the marks.
 
 Constraints
-	•	￼ 0 \leq M \leq 100 
+	•	￼ 0 <= M <= 100 
 	•	Marks will always be an integer.
 
 Example Input 1
@@ -167,7 +167,7 @@ Output Format
 	•	Otherwise, print “Invalid”.
 
 Constraints
-	•	￼ 1 \leq a, b, c \leq 10^5 
+	•	￼ 1 <= a, b, c <= 10^5 
 
 Example Input 1
 
@@ -217,7 +217,7 @@ Output Format
 	•	Otherwise, print “Invalid”.
 
 Constraints
-	•	￼ 1 \leq \text{length of } P \leq 100 
+	•	￼ 1 <= text{length of } P <= 100 
 	•	The password consists of alphanumeric characters and symbols.
 
 Example Input 1
