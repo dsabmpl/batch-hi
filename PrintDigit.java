@@ -1,22 +1,17 @@
 public class PrintDigit {
+
+    static void printDigit(int num) {
+        // Base case or Termination Case
+        if (num == 0) {
+            return; // exit from the function
+        }
+        // Head Recursion
+        printDigit(num / 10); // Recursion Cycle + Small Problem
+        // Stack Fall
+        System.out.println(num % 10);
+    }
+
     public static void main(String[] args) {
-        int num = 12345;
-        int count = 0;
-        int copy = num;
-        // digit count
-        while (num != 0) {
-            num = num / 10; // make number small
-            count++;
-        }
-        num = copy;
-        // Compute the Power
-        int pow = (int) Math.pow(10, count - 1);
-        while (num != 0) {
-            System.out.println(num / pow);
-            // make the number small
-            num = num % pow;
-            // make the power small
-            pow = pow / 10;
-        }
+        printDigit(12345);
     }
 }

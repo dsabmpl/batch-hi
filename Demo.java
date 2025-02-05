@@ -1,19 +1,12 @@
-public class Demo {
+class Demo {
 
-    // can we have more than one main in java single class
-    public static void main() {
-        System.out.println("My Main...");
+    static int add(int x, int y) {
+        return x + y;
     }
 
-    public static void main(int x) {
-        System.out.println("My Main of int ...");
+    public static void main(String[] args) {
+        int c = add(10, 20);
+        System.out.println(c);
     }
 
-    // can we change signature of main
-    static public void main(String... a) {
-        // main();
-        // main(10);
-        System.out.println("Hello Java"); // print in new line
-        System.out.print("Hello"); // print in same line
-    }
 }
