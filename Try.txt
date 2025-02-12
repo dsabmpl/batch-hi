@@ -1,0 +1,14 @@
+1. Array Search Element and Find How many times it present,
+i need to return array where element is present (index)
+e.g 
+[10,20,10,90,10,100,10]
+o/p
+[0,2, 4, 6]
+
+2. input e.g Hello
+search l
+replace k
+O/p Hekko
+
+3. e.g String a = "aaaabbbbbccccc";
+o/p abc

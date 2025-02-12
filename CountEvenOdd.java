@@ -1,48 +1,25 @@
 public class CountEvenOdd {
-    // Approach - 2
-    static int[] evenOddCount(int num) {
+    // int[]
+    // [0] = evenCount
+    // [1] = oddCount
+    static int[] countEvenOdd(int range) {
         // Base case
-        if (num == 0) {
-            return new int[2]; // array default value in case of int array it is 0,0
-            // [0,0]
+        if (range == 0) {
+            int result[] = new int[2];
+            return result;
         }
-        // [0] = evenCount
-        // [1] = oddCount
-        int arr[] = evenOddCount(num - 1); // Small Problem
-        // Stack Fall
-        if (num % 2 == 0) {
-            arr[0]++; // evenCount
+        int r[] = countEvenOdd(range - 1);
+        if (range % 2 == 0) {
+            r[0]++;
         } else {
-            arr[1]++;
+            r[1]++;
         }
-        return arr;
-    }
-
-    // Approach - 1
-    static void evenOddCount(int num, int evenCount, int oddCount) {
-        // Base case
-        if (num == 0) {
-            System.out.println("Even Count " + evenCount + " Odd Count " + oddCount);
-            return;
-        }
-        // Logic
-        if (num % 2 == 0) {
-            evenCount++;
-        } else {
-            oddCount++;
-        }
-        // small problem
-        evenOddCount(num - 1, evenCount, oddCount);
-
+        return r;
     }
 
     public static void main(String[] args) {
-        // Call - Approach - 1
-        // evenOddCount(5, 0, 0);
-
-        // Call - Approach - 2
-        int result[] = evenOddCount(5);
-        System.out.println("Even Count " + result[0]
-                + " Odd Count " + result[1]);
+        int r[] = countEvenOdd(5);
+        System.out.println("Even " + r[0]);
+        System.out.println("Odd " + r[1]);
     }
 }

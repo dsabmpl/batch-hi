@@ -1,0 +1,4 @@
+1. Recursion 
+a) Small Problem + Repeat(FN Call)
+b) Pre / Post Logic
+c) Base Case
