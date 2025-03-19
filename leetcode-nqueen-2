@@ -1,0 +1,58 @@
+class Solution {
+    boolean board[][];
+    public int totalNQueens(int n) {
+        // by default board all values are false
+        board = new boolean[n][n];
+        int count = helper(0, n); // 0 - start row , n - end 
+        return count;
+    }
+    boolean checkInAboveRow(int row, int col){
+        for(int i = row; i>=0;i--){
+            if(board[i][col]){ // true (queen)
+                return false;
+            }
+        }
+        return true;
+    }
+    boolean checkInLD(int row, int col){
+        for(int i = row, j = col; i>=0 && j>=0;i--, j--){
+            if(board[i][j]){ // true (queen)
+                return false;
+            }
+        }
+        return true;
+    }
+    boolean checkInRD(int row, int col){
+        for(int i = row, j = col; i>=0 && j<board[0].length;i--, j++){
+            if(board[i][j]){ // true (queen)
+                return false;
+            }
+        }
+        return true;
+    }
+    boolean canIPlaceAQueen(int row, int col){
+        return checkInAboveRow(row, col) && 
+        checkInLD(row,col) && checkInRD(row, col);
+        // Above Row 
+        // Left Diagonal
+        // Right Diagonal
+
+    }
+    int helper(int row , int n){
+        // Base case
+        if(row == n){ // Board End
+            return 1;
+        }
+        int count = 0;
+        // move in columns
+        for(int col = 0; col<board[0].length; col++){
+            if(canIPlaceAQueen(row, col)){
+                board[row][col] = true; // Queen Placed
+                count  = count +  helper(row + 1, n); // Recursive Call
+                // BackTracking (Col End or Base Case Touch)
+                board[row][col] = false; // Undo the Queen Placement
+            }
+        }
+        return count;
+    }
+}
