@@ -1,0 +1,70 @@
+class Solution {
+    final int MAX = 9;
+    char[][] board; // Instance Variable (When object is created)
+    public void solveSudoku(char[][] board) {
+        this.board = board;
+        
+        helper(0, 0);
+    }
+    boolean checkInRowValuePresent(int row , char digit){
+        for(int i = 0; i<MAX; i++){
+            if(board[row][i]==digit){
+                return true;
+            }
+        }
+        return false;
+    }
+    boolean checkInColValuePresent(int col , char digit){
+        for(int i = 0; i<MAX; i++){
+            if(board[i][col]==digit){
+                return true;
+            }
+        }
+        return false;
+    }
+    boolean checkInSubGridPresent(int row, int col , char digit){
+       int startRow = row - row % 3;
+       int startCol = col - col % 3;
+       for(int i = startRow ; i<startRow+3; i++){
+        for(int j = startCol ; j<startCol+3; j++){
+            if(board[i][j]==digit){
+                return true;
+            }
+        }
+       }
+       return false;
+    }
+    boolean canIPlace(int row, int col, char digit){
+        // Check in a Row
+        // Check in a Column
+        // Check in a Sub Grid
+        return !checkInRowValuePresent(row, digit) && 
+        !checkInColValuePresent(col, digit) && !checkInSubGridPresent(row, col, digit);
+    }
+    boolean helper(int row, int col){
+        // Column End
+        if(col == MAX){
+            row = row + 1;
+            col = 0;
+        }
+        // it means sudoku solved
+        if(row == MAX){
+            return true;
+        }
+        if(board[row][col]!='.'){ // it contains a digit already
+            return helper(row , col + 1);
+        }
+        for(char digit = '1' ; digit<='9'; digit++){
+            if(canIPlace(row, col, digit)){
+                board[row] [col] = digit;  // Place a Digit
+                boolean result = helper(row, col + 1);  // and move to the next column
+                if(result){
+                    return true;
+                }
+                // if not true (backtrack - reach to base or digit in col end)
+                board[row][col] = '.'; // Undo the digit
+            }
+        }
+        return false;
+    }
+}
