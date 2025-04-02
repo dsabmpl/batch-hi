@@ -1,0 +1,99 @@
+// Approach - 1 Brute Force - TC 2 ^N
+// class Solution {
+//     public boolean canPartition(int[] nums) {
+//         int sum = 0;
+//         for(int num : nums){
+//             sum = sum + num;
+//         }
+//         // check (sum is odd )
+//         if(sum %2 !=0){
+//             return false;
+//         }
+
+//         // if it is coming even
+//         int target = sum / 2;
+//         return helper(nums, 0, target);
+//     }
+//     boolean helper(int nums[] , int index, int target){
+//         // base case
+//         if(target == 0){
+//             return true;
+//         }
+//         if(target < 0 || index == nums.length){
+//             return false;
+//         }
+//         // pick it
+//         boolean pickIt =  helper(nums, index + 1, target - nums[index]);
+//         // not pick it
+//         boolean notPickIt =  helper(nums, index + 1, target);
+//         return pickIt || notPickIt;
+//     }
+// }
+
+// Approach - 2 Memo (Top Down Approach)
+// class Solution {
+//     public boolean canPartition(int[] nums) {
+//         int sum = 0;
+//         for(int num : nums){
+//             sum = sum + num;
+//         }
+//         // check (sum is odd )
+//         if(sum %2 !=0){
+//             return false;
+//         }
+//         // all values are by default fill with null (Wrapper)
+//          // if it is coming even
+//         int target = sum / 2;
+//         Boolean [][] cache = new Boolean[nums.length][target +1];
+       
+//         return helper(nums, 0, target, cache);
+//     }
+//     boolean helper(int nums[] , int index, int target, Boolean [][] cache){
+//         // base case
+//         if(target == 0){
+//             return true;
+//         }
+//         if(target < 0 || index == nums.length){
+//             return false;
+//         }
+//         // pre check in cache
+//         if(cache[index][target]!=null){
+//             // value already computed eariler
+//             return cache[index][target];
+//         }
+//         // pick it
+//         boolean pickIt =  helper(nums, index + 1, target - nums[index], cache);
+//         // not pick it
+//         boolean notPickIt =  helper(nums, index + 1, target, cache);
+//         // if result is not already cached
+//         cache[index][target] =  pickIt || notPickIt;
+//         return cache[index][target];
+//     }
+// }
+
+// Approach - 3 Tabulation
+class Solution{
+    public boolean canPartition(int[] nums) {
+        int sum = 0;
+        for(int num : nums){
+            sum = sum + num;
+        }
+        // check (sum is odd )
+        if(sum %2 !=0){
+            return false;
+        }
+        // even
+        int target = sum / 2;
+        boolean dp [] = new boolean[target + 1];
+        // Fill the Base case
+        dp[0] = true;
+        // [1,5,5,11]
+        for(int num : nums){
+            for(int i = target; i>=num; i--){
+                // RR - pickIt (target - nums[index]) || notPickIt target;
+                dp[i] = dp[i-num] || dp[i]; 
+            }
+        }
+        return dp[target];  // top (end)
+    }
+}
