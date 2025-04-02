@@ -1,0 +1,21 @@
+// Approach - 1 Brute Force
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        return helper(nums, 0, -1);
+    }
+    int helper(int nums[] , int index, int prevIndex){
+        // base case
+        if(nums.length == index){
+            return 0;
+        }
+        // pick it
+        int pickIt = 0;
+        if(prevIndex == -1 || nums[index]>nums[prevIndex]){
+              pickIt =  1 + helper(nums, index + 1, index );
+        }
+       
+        // not pick it
+        int notPickIt =  helper(nums, index + 1, prevIndex);
+        return Math.max(pickIt, notPickIt);
+    }
+}
