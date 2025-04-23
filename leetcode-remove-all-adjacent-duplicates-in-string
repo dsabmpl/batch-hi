@@ -1,0 +1,18 @@
+class Solution {
+    public String removeDuplicates(String a) {
+        Stack<Character> s = new Stack<>();
+        for(char c : a.toCharArray()){
+            if(!s.isEmpty() && s.peek() == c){
+                s.pop();
+            }
+            else{
+                s.push(c);
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        while(!s.isEmpty()){
+            sb.append(s.pop());
+        }
+        return sb.reverse().toString();
+    }
+}
