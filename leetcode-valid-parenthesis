@@ -1,0 +1,36 @@
+class Solution {
+
+    boolean helper(char openingBracket , char closingBracket){
+        return (openingBracket == '(' && closingBracket == ')') 
+        || (openingBracket == '[' && closingBracket == ']') || 
+        (openingBracket == '{' && closingBracket == '}');
+    }
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for(char bracket : s.toCharArray()){
+            // is there any opening bracket
+            if(bracket == '(' || bracket=='[' || bracket == '{'){
+                stack.push(bracket);
+            }
+            else{
+                 // closing i have but no opening
+                if(stack.isEmpty()){
+                    return false;
+                }
+                // opening . closing not matched
+                if (!helper(stack.peek(), bracket)){
+                    return false;
+                }
+
+                // found closing bracket compare with opening
+                if(!stack.isEmpty() &&  helper(stack.peek(), bracket)){
+                    stack.pop();
+                    continue;
+                }
+               
+            }
+        }
+        return stack.isEmpty();
+        
+    }
+}
